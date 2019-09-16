@@ -1,4 +1,5 @@
 {
     "title": ["About Us Page."],
-    "moveToDashboard": ["Move to Dashboard"]
+    "moveToDashboard": ["Move to Dashboard"],
+    "fetchPeople": ["Fetch People"]
 }

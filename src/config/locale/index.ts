@@ -5,7 +5,7 @@ export const languages = [
     { name: "English", code: "en" }
 ];
 
-export default {
+export const locale = {
     dashboard,
     aboutus
 };

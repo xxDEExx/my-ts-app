@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 import ReactDOM from 'react-dom';
 import { ConnectedRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
@@ -6,20 +6,36 @@ import { createBrowserHistory } from 'history';
 import * as serviceWorker from 'serviceWorker';
 import ReduxProvider from 'store';
 import LocalizeProvider from 'config/locale/Provider';
+import { languages } from 'config';
+
 import App from 'App';
 
 const history = createBrowserHistory();
 
+interface IProps {
+    lang?: string
+}
+
+export const WrapperProvider: SFC<IProps> = ({ children, lang }) => (
+    <ReduxProvider>
+        <LocalizeProvider lang={lang}>
+            <ConnectedRouter history={history}>
+                {children}
+            </ConnectedRouter>
+        </LocalizeProvider>
+    </ReduxProvider>
+)
+
+WrapperProvider.defaultProps = {
+    lang: languages[0].code
+};
+
 const renderToDOM = () => {
     if (document.getElementById('root')) {
         ReactDOM.render(
-            <ReduxProvider>
-                <LocalizeProvider>
-                    <ConnectedRouter history={history}>
-                        <App />
-                    </ConnectedRouter>
-                </LocalizeProvider>
-            </ReduxProvider>,
+            <WrapperProvider>
+                <App />
+            </WrapperProvider>,
             document.getElementById('root')
         );
     }

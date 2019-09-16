@@ -1,26 +1,20 @@
 import React from 'react';
 import { render, cleanup, fireEvent, wait } from '@testing-library/react';
 
-import locale from 'config/locale/index';
-import LocalizeProvider from 'config/locale/Provider';
-import ReduxProvider from 'store';
+import { WrapperProvider } from 'index';
+import { locale } from 'config/locale/index';
 
 import Dashboard from '../';
 
 const renderComponent = (props = {}) => {
     const defaultProps = {
-        history: {
-            push: jest.fn()
-        },
         ...props
     };
 
     return render(
-        <ReduxProvider>
-            <LocalizeProvider>
-                <Dashboard {...defaultProps} />
-            </LocalizeProvider>
-        </ReduxProvider>
+        <WrapperProvider>
+            <Dashboard {...defaultProps} />
+        </WrapperProvider>
     );
 }
 
@@ -31,7 +25,7 @@ describe('Dashboard', () => {
 
     test('render with no issue', () => {
         const { getByText } = renderComponent();
-        getByText('Dashboard Page.');
+        getByText(dashboard.title[0]);
         fireEvent.click(getByText(dashboard.moveToAbout[0]));
     });
 

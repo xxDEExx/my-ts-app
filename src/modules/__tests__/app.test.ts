@@ -1,6 +1,17 @@
-import { counterSaga } from '../app';
+import { disbatch } from 'redux-act';
+
+import { store } from 'store';
+import { 
+    COUNTER_ACTION,
+    COUNTER_UPDATE_ACTION,
+    counterSaga
+} from '../app';
 
 describe('app module', () => {
+    it("trigger Actions", () => {
+        disbatch(store, COUNTER_ACTION(), COUNTER_UPDATE_ACTION(1));
+    });
+
     it("toggleLoadingSaga", () => {
         const gen = counterSaga(1);
         gen.next();

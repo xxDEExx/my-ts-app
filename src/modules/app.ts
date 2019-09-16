@@ -2,15 +2,15 @@ import { createReducer, createAction } from 'redux-act';
 import { put, takeEvery, delay } from 'redux-saga/effects';
 import { AnyAction } from 'redux';
 
-export const COUNTER_ACTION = createAction('app/action/COUNTER_ACTION');
-export const COUNTER_UPDATE_ACTION = createAction<number>('app/action/COUNTER_UPDATE_ACTION');
+export const COUNTER_ACTION = createAction('app/COUNTER_ACTION');
+export const COUNTER_UPDATE_ACTION = createAction<number>('app/COUNTER_UPDATE_ACTION');
 
 export interface IState {
 	readonly counter: number,
 	readonly loading: boolean
 }
 
-const initialState = {
+const initialState: IState = {
 	counter: 0,
 	loading: false
 }

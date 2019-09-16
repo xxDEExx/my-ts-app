@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { SFC, Fragment } from 'react';
 import Button from '@material-ui/core/Button';
 import Info from '@material-ui/icons/Info';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
@@ -9,7 +9,13 @@ import { Header } from './styles';
 
 const translateId = (id: string) => `aboutus.${id}`;
 
-const AboutUs: SFC<RouteComponentProps> = ({ history }) => (
+interface IProps extends RouteComponentProps<any> {
+    fetchPeople: () => void,
+    loading: boolean,
+    people: any[]
+}
+
+const AboutUs: SFC<IProps> = ({ history, fetchPeople, loading, people }) => (
     <div>
         <Header>
             <Info /><Translate id={translateId('title')} />
@@ -21,6 +27,16 @@ const AboutUs: SFC<RouteComponentProps> = ({ history }) => (
         >
             <KeyboardArrowRight /> <Translate id={translateId('moveToDashboard')} />
         </Button>
+        <br /><br />
+        <Button
+            variant="contained"
+            color="secondary"
+            onClick={() => fetchPeople()}
+            disabled={loading}
+        >
+            <Translate id={translateId('fetchPeople')} />
+        </Button>
+        {people.map((person: any, key: number) => <Fragment key={`person${key}`}><br /><span>{person.name}</span></Fragment>)}
     </div>
 );
   

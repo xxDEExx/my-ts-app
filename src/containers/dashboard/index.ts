@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from "react-router";
 import { IAllState } from 'modules';
 
 import {
@@ -16,7 +17,9 @@ const mapDispatchToProps = {
 	counterAction: COUNTER_ACTION
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Pure)
+export default withRouter(
+	connect(
+		mapStateToProps,
+		mapDispatchToProps
+	)(Pure)
+);

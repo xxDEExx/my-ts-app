@@ -1,23 +1,25 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 
-import locale from 'config/locale/index';
-import LocalizeProvider from 'config/locale/Provider';
+import { store } from 'store';
+import { 
+    FETCH_PEOPLE_UPDATE_ACTION
+} from 'modules/starWars';
+
+import { WrapperProvider } from 'index';
+import { locale } from 'config/locale/index';
 
 import AboutUs from '../';
 
 const renderComponent = (props = {}) => {
     const defaultProps = {
-        history: {
-            push: jest.fn()
-        },
         ...props
     };
 
     return render(
-        <LocalizeProvider>
+        <WrapperProvider>
             <AboutUs {...defaultProps} />
-        </LocalizeProvider>
+        </WrapperProvider>
     );
 }
 
@@ -31,5 +33,15 @@ describe('About Us', () => {
 
         getByText(aboutus.title[0]);
         fireEvent.click(getByText(aboutus.moveToDashboard[0]));
+        fireEvent.click(getByText(aboutus.fetchPeople[0]));
+
+        const samplePeople = [
+            { name: 'Luke SkyWalker' },
+            { name: 'C-3PO' },
+            { name: 'R2-D2' }
+        ]
+        
+        store.dispatch(FETCH_PEOPLE_UPDATE_ACTION(samplePeople));
+        getByText(samplePeople[0].name);
     });
 });
