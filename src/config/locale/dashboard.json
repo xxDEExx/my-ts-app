@@ -1,0 +1,9 @@
+{
+    "title": ["Dashboard Page."],
+    "loading": ["Loading..."],
+    "loaded": ["Loaded"],
+    "increment": ["Increment"],
+    "decrement": ["Decrement"],
+    "toggleLoading": ["Toggle Loading"],
+    "moveToAbout": ["Move to about"]
+}
