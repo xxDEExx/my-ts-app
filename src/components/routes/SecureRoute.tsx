@@ -11,7 +11,7 @@ interface IProps {
     role: string,
     path: string,
     exact?: boolean,
-    mockRedirect?: any
+    mockRedirect?: (props: any) => any
 }
 
 const SecureRoute: SFC<IProps> = ({ component: Component, isAuthenticated, isPrivate, role, route, mockRedirect, ...rest}) => {

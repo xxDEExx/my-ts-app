@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+    ts-app:
+        container_name: ts-app
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - '.:/app'
+            - '/app/node_modules'
+        ports:
+            - '3000:3000'
+        environment:
+            NODE_ENV: development
+            COUNTRY_CODE: '${COUNTRY_CODE}'
+            HTTPS: 'true'

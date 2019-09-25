@@ -15,7 +15,7 @@ const initialState: IState = {
 	loading: false
 }
 
-export const reducer = createReducer<typeof initialState>({}, initialState);
+export const reducer = createReducer<IState>({}, initialState);
 
 reducer.on(COUNTER_ACTION, (state) => ({
 	...state,
