@@ -7,12 +7,16 @@ import { Translate } from "react-localize-redux";
 
 import { Header } from './styles';
 
-const translateId = (id: string) => `aboutus.${id}`;
+const translateId = (id: string) => `aboutUs.${id}`;
 
 interface IProps extends RouteComponentProps<any> {
     fetchPeople: () => void,
     loading: boolean,
     people: any[]
+}
+
+const peopleList = (people: any[]) => {
+    return people.map((person, key: number) => <Fragment key={`person${key}`}><span>{person.name}</span><br /></Fragment>)
 }
 
 const AboutUs: SFC<IProps> = ({ history, fetchPeople, loading, people }) => (
@@ -35,8 +39,8 @@ const AboutUs: SFC<IProps> = ({ history, fetchPeople, loading, people }) => (
             disabled={loading}
         >
             <Translate id={translateId('fetchPeople')} />
-        </Button>
-        {people.map((person: any, key: number) => <Fragment key={`person${key}`}><br /><span>{person.name}</span></Fragment>)}
+        </Button><br /><br />
+        { loading ? 'Fetching...' : peopleList(people) }
     </div>
 );
   

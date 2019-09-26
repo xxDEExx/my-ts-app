@@ -4,14 +4,15 @@ import { IAllState } from 'modules';
 
 import {
 	FETCH_PEOPLE_ACTION,
+	getPeople,
+	getLoading
 } from 'modules/starWars';
 
 import Pure from './Pure';
 
 const mapStateToProps = (state: IAllState) => ({
-	loading: state.starWars.loading,
-	counter: state.app.counter,
-	people: state.starWars.people
+	loading: getLoading(state),
+	people: getPeople(state)
 })
 
 const mapDispatchToProps = {

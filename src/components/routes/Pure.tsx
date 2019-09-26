@@ -1,38 +1,29 @@
 import React, { SFC } from 'react';
-import { Switch } from "react-router-dom";
+import { Switch, Route } from 'react-router-dom';
 
-import { routing } from 'config';
+import { routing, USER_TYPE } from 'config';
 import SecureRoute from './SecureRoute';
 
-// Containers
-import dashboard from 'containers/dashboard';
-import aboutus from 'containers/aboutus';
-
-// const NotFound: SFC = () => <div>Page not found!</div>;
-
-const containers = {
-	dashboard,
-	aboutus
-}
+import NotFound from 'containers/others/404';
 
 const RouteComponent: SFC = () => (
 	<Switch>
-		{Object.keys(routing).map((route: string) => {
-			const { path, key, isPrivate } = routing[route];
+		{Object.keys(routing).map((route: string, key: number) => {
+			const { path, isPrivate, component = '' } = routing[route];
 			return (
 				<SecureRoute
 					path={path}
-					component={containers[route]}
+					component={component}
 					isAuthenticated={true}
-					role='ADMIN'
+					role={USER_TYPE.ADMIN}
 					route={route}
 					isPrivate={isPrivate}
 					key={`routeKey${key}`}
 				/>
 			);
 		})}
-		{/* <Route component={NotFound} /> */}
+		<Route component={NotFound} />
 	</Switch>
 )
 
-export default RouteComponent
+export default RouteComponent;

@@ -45,7 +45,7 @@ const Dashboard: FC<IProps> = ({ loading, counter, counterAction, history }) => 
             <Button
                 variant="contained"
                 color="primary"
-                onClick={() => history.push('/aboutus')}
+                onClick={() => history.push('/aboutUs')}
             >
                 <KeyboardArrowRight /> <Translate id={translateId('moveToAbout')} />
             </Button>

@@ -1,6 +1,4 @@
 export * from './locale';
 export * from './routing';
 
-export default {
-    title: 'My TS React APP'
-}
+export const PAGE_TITLE = 'My TS React APP';

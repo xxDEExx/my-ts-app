@@ -2,7 +2,7 @@ import React, { SFC, Fragment, useEffect } from 'react';
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import config from 'config';
+import { PAGE_TITLE } from 'config';
 
 import theme, { useStyles } from 'themes';
 import Route from 'components/routes';
@@ -11,7 +11,7 @@ const App: SFC = () => {
 	useStyles();
 
 	useEffect(() => {
-		document.title = config.title;
+		document.title = PAGE_TITLE;
 	});
 
 	return (

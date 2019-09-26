@@ -4,13 +4,15 @@ import { IAllState } from 'modules';
 
 import {
 	COUNTER_ACTION,
+	getCounter,
+	getLoading
 } from 'modules/app';
 
 import Pure from './Pure';
 
 const mapStateToProps = (state: IAllState) => ({
-	loading: state.app.loading,
-	counter: state.app.counter
+	loading: getLoading(state),
+	counter: getCounter(state)
 })
 
 const mapDispatchToProps = {

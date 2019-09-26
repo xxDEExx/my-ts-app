@@ -1,16 +1,18 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, wait } from '@testing-library/react';
 
 import { WrapperProvider } from 'index';
 
 import SecureRoute from '../SecureRoute';
 import Dashboard from 'containers/dashboard';
 
+import { USER_TYPE } from 'config';
+
 const renderComponent = (props = {}) => {
     const defaultProps = {
         component: Dashboard,
         path: '/',
-        role: 'ADMIN',
+        role: USER_TYPE.ADMIN,
         route: 'dashboard',
         ...props
     };
@@ -22,7 +24,8 @@ const renderComponent = (props = {}) => {
     );
 }
 
-const mockRedirect = (props: any) => <div>Mock Redirect</div>;
+const mockText = 'Mock Redirect';
+const redirect = (props: any) => <div>{mockText}</div>;
 
 describe('SecureRoute', () => {
     afterEach(cleanup);
@@ -31,19 +34,20 @@ describe('SecureRoute', () => {
         renderComponent();
     });
 
-    test('render private page with no authenticated user', () => {
-        renderComponent({ isPrivate: true, mockRedirect });
+    test('render private page without authorize user', () => {
+        renderComponent({ isPrivate: true, redirect });
     });
 
-    test('render private page with authenticated user', () => {
-        renderComponent({ role: 'ADMIN', isAuthenticated: true, isPrivate: true });
+    test('render private page with authorize user', () => {
+        renderComponent({ isAuthenticated: true, isPrivate: true });
     });
 
-    test('render private page with authenticated user', () => {
-        renderComponent({ role: 'MANAGER', isAuthenticated: true, isPrivate: true, mockRedirect });
+    test('render private page without authorize user', async () => {
+        const { getByText } = renderComponent({ role: USER_TYPE.MANAGER, isAuthenticated: true, isPrivate: true });
+        await wait(() =>getByText('This page is forbidden!'));
     });
 
-    test('render note private page with authenticated user', () => {
-        renderComponent({ isAuthenticated: true, mockRedirect });
+    test('render not private page with authenticated user', () => {
+        renderComponent({ isAuthenticated: true, redirect });
     });
 });

@@ -23,7 +23,7 @@ const renderComponent = (props = {}) => {
     );
 }
 
-const { aboutus } = locale;
+const { aboutUs } = locale;
 
 describe('About Us', () => {
     afterEach(cleanup);
@@ -31,9 +31,9 @@ describe('About Us', () => {
     test('render with no issue', async () => {
         const { getByText } = renderComponent();
 
-        getByText(aboutus.title[0]);
-        fireEvent.click(getByText(aboutus.moveToDashboard[0]));
-        fireEvent.click(getByText(aboutus.fetchPeople[0]));
+        getByText(aboutUs.title[0]);
+        fireEvent.click(getByText(aboutUs.moveToDashboard[0]));
+        fireEvent.click(getByText(aboutUs.fetchPeople[0]));
 
         const samplePeople = [
             { name: 'Luke SkyWalker' },

@@ -3,6 +3,8 @@ import { put, takeEvery, call } from 'redux-saga/effects';
 
 import { fetchStarWarsPeople } from 'services';
 
+export * from './selector';
+
 export interface IState {
     readonly loading: boolean,
     readonly people: any[]

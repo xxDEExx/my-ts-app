@@ -1,3 +1,7 @@
+// Containers
+import dashboard from 'containers/dashboard';
+import aboutUs from 'containers/aboutUs';
+
 export const USER_TYPE = {
     ADMIN: 'ADMIN',
     MANAGER: 'MANAGER',
@@ -9,26 +13,18 @@ const { ADMIN, MANAGER, USER } = USER_TYPE;
 export const routing = {
     dashboard: {
         path: '/',
-        icon: '',
-        key: 1,
         isPrivate: true,
-        access: [ADMIN]
+        access: [ADMIN],
+        component: dashboard
     },
-    aboutus: {
-        path: '/aboutus',
-        icon: '',
-        key: 2,
+    aboutUs: {
+        path: '/aboutUs',
         isPrivate: true,
-        access: [ADMIN, MANAGER, USER]
+        access: [ADMIN, MANAGER, USER],
+        component: aboutUs
     },
     login: {
         path: '/login',
-        key: 3,
-        isPrivate: false
-    },
-    forbidden: {
-        path: '/403',
-        key: 4,
         isPrivate: false
     }
 };

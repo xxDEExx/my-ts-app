@@ -2,6 +2,8 @@ import { createReducer, createAction } from 'redux-act';
 import { put, takeEvery, delay } from 'redux-saga/effects';
 import { AnyAction } from 'redux';
 
+export * from './selector';
+
 export const COUNTER_ACTION = createAction('app/COUNTER_ACTION');
 export const COUNTER_UPDATE_ACTION = createAction<number>('app/COUNTER_UPDATE_ACTION');
 
