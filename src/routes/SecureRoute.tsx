@@ -2,7 +2,7 @@ import React, { SFC } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 import { routing } from 'config';
-import Forbidden from 'containers/others/403';
+import Forbidden from './others/403';
 
 interface IProps {
     component: new (props: any) => React.Component,

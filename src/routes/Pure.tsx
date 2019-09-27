@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import { routing, USER_TYPE } from 'config';
 import SecureRoute from './SecureRoute';
 
-import NotFound from 'containers/others/404';
+import NotFound from './others/404';
 
 const RouteComponent: SFC = () => (
 	<Switch>

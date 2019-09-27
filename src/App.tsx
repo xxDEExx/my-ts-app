@@ -5,7 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { PAGE_TITLE } from 'config';
 
 import theme, { useStyles } from 'themes';
-import Route from 'components/routes';
+import Route from 'routes';
 
 const App: SFC = () => {
 	useStyles();

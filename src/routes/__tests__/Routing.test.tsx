@@ -4,7 +4,7 @@ import { render, cleanup, wait } from '@testing-library/react';
 import { WrapperProvider } from 'index';
 
 import SecureRoute from '../SecureRoute';
-import Dashboard from 'containers/dashboard';
+import Dashboard from '../dashboard';
 
 import { USER_TYPE } from 'config';
 
@@ -34,8 +34,9 @@ describe('SecureRoute', () => {
         renderComponent();
     });
 
-    test('render private page without authorize user', () => {
-        renderComponent({ isPrivate: true, redirect });
+    test('render private page without authorize user', async () => {
+        const { getByText } = renderComponent({ isPrivate: true, redirect });
+        await wait(() =>getByText('Mock Redirect'));
     });
 
     test('render private page with authorize user', () => {
@@ -47,7 +48,8 @@ describe('SecureRoute', () => {
         await wait(() =>getByText('This page is forbidden!'));
     });
 
-    test('render not private page with authenticated user', () => {
-        renderComponent({ isAuthenticated: true, redirect });
+    test('render not private page with authenticated user', async () => {
+        const { getByText } = renderComponent({ isAuthenticated: true, redirect });
+        await wait(() =>getByText('Mock Redirect'));
     });
 });

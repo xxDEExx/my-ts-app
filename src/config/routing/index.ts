@@ -1,6 +1,6 @@
-// Containers
-import dashboard from 'containers/dashboard';
-import aboutUs from 'containers/aboutUs';
+// Routes
+import dashboard from 'routes/dashboard';
+import aboutUs from 'routes/aboutUs';
 
 export const USER_TYPE = {
     ADMIN: 'ADMIN',
