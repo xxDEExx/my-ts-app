@@ -1,7 +1,7 @@
 import { createReducer, createAction } from 'redux-act';
 import { put, takeEvery, call } from 'redux-saga/effects';
 
-import { fetchStarWarsPeople } from 'services';
+import { fetchStarWarsPeople } from './api';
 
 export * from './selector';
 

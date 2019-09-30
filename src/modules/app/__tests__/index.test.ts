@@ -5,7 +5,7 @@ import {
     COUNTER_ACTION,
     COUNTER_UPDATE_ACTION,
     counterSaga
-} from '../app';
+} from '../';
 
 describe('app module', () => {
     it("trigger Actions", () => {

@@ -18,12 +18,8 @@ interface IProps extends RouteComponentProps<any> {
 
 const translateId = (id: string) => `dashboard.${id}`;
 
-const Dashboard: FC<IProps> = ({ loading, counter, counterAction, history }) => {
+const Dashboard: FC<IProps> = ({ history, loading, counter, counterAction }) => {
     const classes = useStyles();
-
-    const onClickCounter = (val: number) => {
-        counterAction(val);
-    }
 
     return (
         <Fragment>
@@ -39,8 +35,8 @@ const Dashboard: FC<IProps> = ({ loading, counter, counterAction, history }) => 
             <span><b>{counter}</b></span>
             <br />
             <ButtonGroup color="primary" aria-label="outlined primary button group">
-              <Button onClick={() => onClickCounter(1)}><Translate id={translateId('increment')} /></Button>
-              <Button onClick={() => onClickCounter(-1)}><Translate id={translateId('decrement')} /></Button>
+              <Button onClick={() => counterAction(1)}><Translate id={translateId('increment')} /></Button>
+              <Button onClick={() => counterAction(-1)}><Translate id={translateId('decrement')} /></Button>
             </ButtonGroup><br /><br />
             <Button
                 variant="contained"

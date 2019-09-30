@@ -1,6 +1,8 @@
 import { createReducer, createAction } from 'redux-act';
-import { put, takeEvery, delay } from 'redux-saga/effects';
+import { put, takeEvery, delay, call  } from 'redux-saga/effects';
 import { AnyAction } from 'redux';
+
+// import ws from 'services/ws';
 
 export * from './selector';
 
@@ -34,6 +36,14 @@ export function * counterSaga({ payload }: AnyAction) {
 	yield delay(500);
 	yield put(COUNTER_UPDATE_ACTION(payload));
 }
+
+// export function * connectSaga() {
+// 	const wsConnection = yield call(ws, 'wss://echo.websocket.org');
+// 	console.log('>>> wsConnection: ', wsConnection);
+// 	setTimeout(() => {
+// 		wsConnection.send('My name is John');
+// 	}, 5000);
+// }
 
 export const rootSaga = function * () {
 	yield takeEvery(COUNTER_ACTION, counterSaga);

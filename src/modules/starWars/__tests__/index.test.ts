@@ -5,7 +5,7 @@ import {
     FETCH_PEOPLE_ACTION,
     FETCH_PEOPLE_UPDATE_ACTION,
     fetchPeopleSaga
-} from '../starWars';
+} from '../';
 
 describe('starWars module', () => {
     it("trigger Actions", () => {
