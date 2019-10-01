@@ -17,7 +17,8 @@ One time installation
 
 ## Running the containers
 - be in the root folder of repo
-- run `docker-compose up -d --build` to build image and run container, remove `--build` if image already existed<br><br>
+- run `docker-compose up -d --build` to build image and run container
+- run `docker-compose -f docker-compose-prod.yml up -d --build` for production build<br><br>
 
 Runs the app in the development mode.<br>
 Open [https://localhost:3000](https://localhost:3000) to view it in the browser.
