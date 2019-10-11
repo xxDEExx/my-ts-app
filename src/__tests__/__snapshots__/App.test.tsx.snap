@@ -20,6 +20,33 @@ exports[`APP render with no issue 1`] = `
       Dashboard Page.
     </span>
   </h1>
+  <button
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      Move to about
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+        />
+      </svg>
+    </span>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
+  <br />
+  <br />
   <span>
     Loaded
   </span>
@@ -36,7 +63,7 @@ exports[`APP render with no issue 1`] = `
     role="group"
   >
     <button
-      class="MuiButtonBase-root MuiButton-root MuiButtonGroup-grouped MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedPrimary MuiButton-outlined MuiButton-outlinedPrimary"
+      class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedPrimary MuiButton-outlinedPrimary"
       tabindex="0"
       type="button"
     >
@@ -50,7 +77,7 @@ exports[`APP render with no issue 1`] = `
       />
     </button>
     <button
-      class="MuiButtonBase-root MuiButton-root MuiButtonGroup-grouped MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedPrimary MuiButton-outlined MuiButton-outlinedPrimary"
+      class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButtonGroup-grouped MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedPrimary MuiButton-outlinedPrimary"
       tabindex="0"
       type="button"
     >
@@ -67,13 +94,138 @@ exports[`APP render with no issue 1`] = `
   <br />
   <br />
   <button
-    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+    class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
     tabindex="0"
     type="button"
   >
     <span
       class="MuiButton-label"
     >
+      Outlined Button
+    </span>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
+  <br />
+  <br />
+  <button
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-containedSizeLarge MuiButton-sizeLarge MuiButton-fullWidth"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      Primary Button
+    </span>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
+  <br />
+  <br />
+  <button
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-containedSizeLarge MuiButton-sizeLarge"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      Secondary Button
+    </span>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
+  <br />
+  <br />
+  <div
+    class="MuiFormControl-root MuiTextField-root MuiFormControl-marginDense"
+  >
+    <label
+      class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense MuiInputLabel-outlined"
+      data-shrink="false"
+    >
+      Name
+    </label>
+    <div
+      class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+    >
+      <input
+        aria-invalid="false"
+        class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+        type="text"
+        value=""
+      />
+      <fieldset
+        aria-hidden="true"
+        class="PrivateNotchedOutline-root-115 MuiOutlinedInput-notchedOutline"
+        style="padding-left: 8px;"
+      >
+        <legend
+          class="PrivateNotchedOutline-legend-116"
+          style="width: 0.01px;"
+        >
+          <span>
+            ​
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div
+    class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+  >
+    <label
+      class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-error Mui-error"
+      data-shrink="false"
+    >
+      Name
+    </label>
+    <div
+      class="MuiInputBase-root MuiOutlinedInput-root Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+    >
+      <input
+        aria-invalid="true"
+        class="MuiInputBase-input MuiOutlinedInput-input"
+        type="text"
+        value=""
+      />
+      <fieldset
+        aria-hidden="true"
+        class="PrivateNotchedOutline-root-115 MuiOutlinedInput-notchedOutline"
+        style="padding-left: 8px;"
+      >
+        <legend
+          class="PrivateNotchedOutline-legend-116"
+          style="width: 0.01px;"
+        >
+          <span>
+            ​
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+  <br />
+  <br />
+  <span
+    aria-disabled="false"
+    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-123 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+  >
+    <span
+      class="MuiIconButton-label"
+    >
+      <input
+        class="PrivateSwitchBase-input-126"
+        data-indeterminate="false"
+        type="checkbox"
+        value="checkedB"
+      />
       <svg
         aria-hidden="true"
         class="MuiSvgIcon-root"
@@ -82,14 +234,16 @@ exports[`APP render with no issue 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+          d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
         />
       </svg>
-       Move to about
     </span>
     <span
       class="MuiTouchRipple-root"
     />
-  </button>
+  </span>
+  <p>
+    The quick brown fox jumps over the lazy dog.
+  </p>
 </DocumentFragment>
 `;

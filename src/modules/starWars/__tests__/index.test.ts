@@ -1,6 +1,6 @@
 import { disbatch } from 'redux-act';
 
-import { store } from 'store';
+import { configureStore } from 'store';
 import { 
     FETCH_PEOPLE_ACTION,
     FETCH_PEOPLE_UPDATE_ACTION,
@@ -9,7 +9,7 @@ import {
 
 describe('starWars module', () => {
     it("trigger Actions", () => {
-        disbatch(store, FETCH_PEOPLE_ACTION(), FETCH_PEOPLE_UPDATE_ACTION([]));
+        disbatch(configureStore(), FETCH_PEOPLE_ACTION(), FETCH_PEOPLE_UPDATE_ACTION([]));
     });
 
     it("fetchPeopleSaga", () => {

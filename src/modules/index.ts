@@ -11,12 +11,11 @@ export interface IAllState {
 	router: RouterState
 }
 
-export const createRootReducer = (history: History) =>
-	combineReducers({
-		app: App.reducer,
-		starWars: StarWars.reducer,
-		router: connectRouter(history)
-	})
+export const createRootReducer = (history: History) => combineReducers({
+	app: App.reducer,
+	starWars: StarWars.reducer,
+	router: connectRouter(history)
+})
 
 export const rootSagas = [
 	App.rootSaga,

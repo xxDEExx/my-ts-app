@@ -1,10 +1,12 @@
 import React from 'react';
 import { render, cleanup, wait } from '@testing-library/react';
+import { ThemeProvider } from '@material-ui/styles';
 
 import { WrapperProvider } from 'index';
 
 import SecureRoute from '../SecureRoute';
 import Dashboard from '../dashboard';
+import theme from 'themes';
 
 import { USER_TYPE } from 'config';
 
@@ -19,7 +21,9 @@ const renderComponent = (props = {}) => {
 
     return render(
         <WrapperProvider>
-            <SecureRoute {...defaultProps} />
+            <ThemeProvider theme={theme}>
+                <SecureRoute {...defaultProps} />
+            </ThemeProvider>
         </WrapperProvider>
     );
 }

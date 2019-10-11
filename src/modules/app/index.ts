@@ -1,5 +1,5 @@
 import { createReducer, createAction } from 'redux-act';
-import { put, takeEvery, delay, call  } from 'redux-saga/effects';
+import { put, takeEvery, delay  } from 'redux-saga/effects';
 import { AnyAction } from 'redux';
 
 // import ws from 'services/ws';

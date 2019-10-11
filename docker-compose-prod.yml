@@ -5,13 +5,13 @@ services:
         container_name: ts-app
         build:
             context: .
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile-prod
         volumes:
             - '.:/app'
             - '/app/node_modules'
         ports:
-            - "3000:443"
+            - '443:443'
         environment:
             NODE_ENV: production
-            COUNTRY_CODE: '${COUNTRY_CODE}'
+            COUNTRY_CODE: ${COUNTRY_CODE}
             HTTPS: 'true'

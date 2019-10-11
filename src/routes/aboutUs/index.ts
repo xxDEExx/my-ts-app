@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { withRouter } from "react-router";
 import { IAllState } from 'modules';
 
 import {
@@ -19,9 +18,7 @@ const mapDispatchToProps = {
 	fetchPeople: FETCH_PEOPLE_ACTION
 }
 
-export default withRouter(
-	connect(
-		mapStateToProps,
-		mapDispatchToProps
-	)(Pure)
-);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Pure);

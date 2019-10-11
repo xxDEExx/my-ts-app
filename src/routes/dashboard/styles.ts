@@ -3,19 +3,19 @@ import { Theme } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) => ({
     header: {
-        background: '#000000',
-        color: '#FFFFFF',
-        margin: '0 0 20px',
-        padding: '10px',
+        background: theme.palette.common.black,
+        color: theme.palette.common.white,
+        margin: `0 0 ${theme.spacing(3)}px`,
+        padding: theme.spacing(1),
         display: 'flex',
         alignItems: 'center',
         "& svg": {
             float: 'left',
-            marginRight: '10px'
+            marginRight: theme.spacing(1)
         },
         [theme.breakpoints.down('sm')]: {
             background: '#dddddd',
-            color: '#000000'
+            color: theme.palette.common.black
         }
     }
 }));

@@ -1,23 +1,21 @@
 import React, { SFC } from 'react';
 import ReactDOM from 'react-dom';
 import { ConnectedRouter } from 'connected-react-router';
-import { createBrowserHistory } from 'history';
 
 import * as serviceWorker from 'serviceWorker';
-import ReduxProvider from 'store';
+import ReduxProvider, { history } from 'store';
 import LocalizeProvider from 'config/locale/Provider';
 import { languages } from 'config';
 
 import App from 'App';
 
-const history = createBrowserHistory();
-
 interface IProps {
     lang?: string
+    store?: any
 }
 
-export const WrapperProvider: SFC<IProps> = ({ children, lang }) => (
-    <ReduxProvider>
+export const WrapperProvider: SFC<IProps> = ({ children, store, lang }) => (
+    <ReduxProvider store={store}>
         <LocalizeProvider lang={lang}>
             <ConnectedRouter history={history}>
                 {children}

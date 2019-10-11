@@ -1,8 +1,10 @@
 import React from 'react';
 import { render, cleanup, fireEvent, wait } from '@testing-library/react';
+import { ThemeProvider } from '@material-ui/styles';
 
 import { WrapperProvider } from 'index';
 import { locale } from 'config/locale/index';
+import theme from 'themes';
 
 import Dashboard from '../';
 
@@ -13,7 +15,9 @@ const renderComponent = (props = {}) => {
 
     return render(
         <WrapperProvider>
-            <Dashboard {...defaultProps} />
+            <ThemeProvider theme={theme}>
+                <Dashboard {...defaultProps} />
+            </ThemeProvider>
         </WrapperProvider>
     );
 }

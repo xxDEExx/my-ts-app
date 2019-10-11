@@ -1,15 +1,19 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent, put } from '@testing-library/react';
+import { ThemeProvider } from '@material-ui/styles';
 
-import { store } from 'store';
+import { configureStore } from 'store';
 import { 
     FETCH_PEOPLE_UPDATE_ACTION
 } from 'modules/starWars';
 
 import { WrapperProvider } from 'index';
 import { locale } from 'config/locale/index';
+import theme from 'themes';
 
 import AboutUs from '../';
+
+const store = configureStore();
 
 const renderComponent = (props = {}) => {
     const defaultProps = {
@@ -17,8 +21,10 @@ const renderComponent = (props = {}) => {
     };
 
     return render(
-        <WrapperProvider>
-            <AboutUs {...defaultProps} />
+        <WrapperProvider store={store}>
+            <ThemeProvider theme={theme}>
+                <AboutUs {...defaultProps} />
+            </ThemeProvider>
         </WrapperProvider>
     );
 }
@@ -40,7 +46,7 @@ describe('About Us', () => {
             { name: 'C-3PO' },
             { name: 'R2-D2' }
         ]
-        
+
         store.dispatch(FETCH_PEOPLE_UPDATE_ACTION(samplePeople));
         getByText(samplePeople[0].name);
     });

@@ -1,15 +1,14 @@
 import React, { SFC, Fragment } from 'react';
 import Button from '@material-ui/core/Button';
 import Info from '@material-ui/icons/Info';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-import { RouteComponentProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Translate } from "react-localize-redux";
 
 import { Header } from './styles';
 
 const translateId = (id: string) => `aboutUs.${id}`;
 
-interface IProps extends RouteComponentProps<any> {
+interface IProps {
     fetchPeople: () => void,
     loading: boolean,
     people: any[]
@@ -19,18 +18,12 @@ const peopleList = (people: any[]) => {
     return people.map((person, key: number) => <Fragment key={`person${key}`}><span>{person.name}</span><br /></Fragment>)
 }
 
-const AboutUs: SFC<IProps> = ({ history, fetchPeople, loading, people }) => (
+const AboutUs: SFC<IProps> = ({ fetchPeople, loading, people }) => (
     <div>
         <Header>
             <Info /><Translate id={translateId('title')} />
         </Header>
-        <Button
-            variant="contained"
-            color="primary"
-            onClick={() => history.push('/')}
-        >
-            <KeyboardArrowRight /> <Translate id={translateId('moveToDashboard')} />
-        </Button>
+        <Link to="/"><Translate id={translateId('moveToDashboard')} /></Link>
         <br /><br />
         <Button
             variant="contained"

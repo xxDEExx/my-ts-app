@@ -1,6 +1,6 @@
 import { disbatch } from 'redux-act';
 
-import { store } from 'store';
+import { configureStore } from 'store';
 import { 
     COUNTER_ACTION,
     COUNTER_UPDATE_ACTION,
@@ -9,7 +9,7 @@ import {
 
 describe('app module', () => {
     it("trigger Actions", () => {
-        disbatch(store, COUNTER_ACTION(), COUNTER_UPDATE_ACTION(1));
+        disbatch(configureStore(), COUNTER_ACTION(), COUNTER_UPDATE_ACTION(1));
     });
 
     it("toggleLoadingSaga", () => {

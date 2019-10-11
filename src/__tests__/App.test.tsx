@@ -2,7 +2,6 @@ import React from "react";
 import { render, cleanup } from '@testing-library/react';
 
 import { WrapperProvider } from 'index';
-
 import App from 'App';
 
 const renderComponent = () => {
