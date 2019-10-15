@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent, put } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import { ThemeProvider } from '@material-ui/styles';
 
 import { configureStore } from 'store';

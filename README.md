@@ -24,4 +24,12 @@ Runs the app in the development mode.<br>
 Open [https://localhost:3000](https://localhost:3000) to view it in the browser.
 
 ## Stop the containers
-- run `docker-compose stop`
+- run `docker-compose stop|down`
+
+## Run Test
+- run `yarn test` (run changed file test case)
+- run `yarn test -- <path>` (run specific test case path)
+- run `yarn test -u --watchAll` (run all test case and update snapshot)
+
+## Run EsLint
+- run `yarn lint`
