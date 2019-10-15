@@ -6,12 +6,12 @@ const useStyles = makeStyles((theme: Theme) => ({
         background: theme.palette.common.black,
         color: theme.palette.common.white,
         margin: `0 0 ${theme.spacing(3)}px`,
-        padding: theme.spacing(1),
+        padding: theme.spacing(),
         display: 'flex',
         alignItems: 'center',
         "& svg": {
             float: 'left',
-            marginRight: theme.spacing(1)
+            marginRight: theme.spacing()
         },
         [theme.breakpoints.down('sm')]: {
             background: '#dddddd',

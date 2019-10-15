@@ -3,7 +3,7 @@ import { createMuiTheme, makeStyles, Theme } from '@material-ui/core/styles';
 export const useStyles = makeStyles((theme: Theme) => ({
     '@global': {
         'body': {
-            padding: theme.spacing(1),
+            padding: theme.spacing(),
             margin: 0,
 			[theme.breakpoints.down('sm')]: {
 				padding: 0

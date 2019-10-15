@@ -11,6 +11,9 @@ declare global {
     interface Window { INITIAL_REDUX_STATE: any }
 }
 
+// export const history = createBrowserHistory({
+//     basename: 'manager/'
+// });
 export const history = createBrowserHistory();
 const sagaMiddleware = createSagaMiddleware();
 

@@ -14,6 +14,8 @@ One time installation
 # Environment setup
 - set following env variables in terminal:
     - COUNTRY_CODE=sg
+- update .env.development file
+    - you can use Postman (mockup/postman/Data.postman_collection.json) source file as your mockup backend server. (just import the json file to Postman)
 
 ## Running the containers
 - be in the root folder of repo
